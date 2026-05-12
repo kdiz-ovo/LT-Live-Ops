@@ -1,64 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-  </style>
+    <meta charset="UTF-8">
+    <title>OVO Live Ops Dashboard</title>
+    <style>
+        :root { --dark: #004a32; --green: #2ecc71; --amber: #f1c40f; --red: #e74c3c; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        header { background: white; padding: 15px; border-bottom: 4px solid var(--dark); display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 20px; }
+        .container { display: grid; grid-template-columns: 320px 1fr; gap: 20px; }
+        .summary-box { background: var(--dark); color: white; padding: 20px; border-radius: 10px; min-height: 200px; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 20px; }
+        .card { background: white; padding: 15px; border-radius: 8px; text-align: center; border-top: 5px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card.green { border-top-color: var(--green); }
+        .card.amber { border-top-color: var(--amber); }
+        .card.red { border-top-color: var(--red); }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        th { background: #fafafa; padding: 12px; text-align: left; border-bottom: 2px solid #eee; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root { --dark: #004a32; --green: #2ecc71; --amber: #f1c40f; --red: #e74c3c; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header { background: white; padding: 15px; border-bottom: 4px solid var(--dark); display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container { display: grid; grid-template-columns: 300px 1fr; gap: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.summary-box { background: var(--dark); color: white; padding: 20px; border-radius: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card { background: white; padding: 15px; border-radius: 8px; text-align: center; border-top: 5px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card.green { border-top-color: var(--green); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card.amber { border-top-color: var(--amber); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card.red { border-top-color: var(--red); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>th { background: #eee; padding: 12px; text-align: left; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>td { padding: 12px; border-bottom: 1px solid #eee; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;&lt;div&gt;LIVE OPERATIONS UPDATE&lt;/div&gt;&lt;div id="time"&gt;Loading...&lt;/div&gt;&lt;/header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="summary-box"&gt;&lt;h3&gt;EXECUTIVE SUMMARY&lt;/h3&gt;&lt;p id="sum"&gt;---&lt;/p&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-grid" id="kpis"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Area&lt;/th&gt;&lt;th&gt;vsFcst&lt;/th&gt;&lt;th&gt;ASA&lt;/th&gt;&lt;th&gt;Abnd%&lt;/th&gt;&lt;th&gt;AHT&lt;/th&gt;&lt;th&gt;Adh&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody id="rows"&gt;&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const URL = 'https://script.google.com/a/macros/ovo.com/s/AKfycbzee9eJGRu3xZ2wEv4yAUUnUglKcXnXlnCoSX5K1RE99_pz52dQ59jHQt7sEF3iFnhrhQ/exec';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>async function update() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const res = await fetch(URL);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const data = await res.json();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('sum').innerText = data.summary;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('kpis').innerHTML = data.metrics.map(m =&gt; `</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card ${m.rag}"&gt;&lt;div&gt;${m.area}&lt;/div&gt;&lt;div style="font-size:20px;font-weight:bold"&gt;${m.asa}&lt;/div&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>`).join('');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('rows').innerHTML = data.metrics.map(m =&gt; `</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;&lt;td&gt;&lt;strong&gt;${m.area}&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;${m.vsFcst}&lt;/td&gt;&lt;td style="color:var(--${m.rag});font-weight:bold"&gt;${m.asa}&lt;/td&gt;&lt;td&gt;${m.abnd}&lt;/td&gt;&lt;td&gt;${m.aht}&lt;/td&gt;&lt;td&gt;${m.adh}&lt;/td&gt;&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>`).join('');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('time').innerText = new Date().toLocaleTimeString();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>update(); setInterval(update, 60000);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <header><div>OVO LIVE OPERATIONS</div><div id="time">Connecting...</div></header>
+    <div class="container">
+        <div class="summary-box"><h3>EXECUTIVE SUMMARY</h3><p id="sum">Loading from Google Doc...</p></div>
+        <div>
+            <div class="kpi-grid" id="kpis"></div>
+            <table>
+                <thead><tr><th>Area</th><th>vsFcst</th><th>ASA</th><th>Abnd%</th><th>AHT</th><th>Adh</th></tr></thead>
+                <tbody id="rows"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        // REPLACE THE LINK BELOW WITH YOUR APPS SCRIPT WEB APP URL (The one ending in /exec)
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyC1fG1-A8UqX8B_1A8rM6U_qYp7-wFYdPJf1EqiyFk-/exec';
+
+        async function updateDashboard() {
+            try {
+                const response = await fetch(WEB_APP_URL);
+                const data = await response.json();
+                
+                // Update Summary
+                document.getElementById('sum').innerText = data.summary || "No summary found.";
+
+                // Update KPI Tiles
+                document.getElementById('kpis').innerHTML = data.metrics.map(m => `
+                    <div class="card ${m.rag}">
+                        <div style="font-size:11px;color:#666">${m.area}</div>
+                        <div style="font-size:22px;font-weight:bold">${m.asa}</div>
+                    </div>
+                `).join('');
+
+                // Update Table Rows
+                document.getElementById('rows').innerHTML = data.metrics.map(m => `
+                    <tr>
+                        <td><strong>${m.area}</strong></td>
+                        <td>${m.vsFcst}</td>
+                        <td style="color:var(--${m.rag});font-weight:bold">${m.asa}</td>
+                        <td>${m.abnd}</td>
+                        <td>${m.aht}</td>
+                        <td>${m.adh}</td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('time').innerText = "Last Updated: " + new Date().toLocaleTimeString();
+            } catch (error) {
+                document.getElementById('sum').innerText = "Error: Could not connect to Google Script. Check permissions.";
+                console.error(error);
+            }
+        }
+
+        updateDashboard();
+        setInterval(updateDashboard, 60000);
+    </script>
 </body>
 </html>
