@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root { --dark: #004a32; --green: #2ecc71; --amber: #f1c40f; --red: #e74c3c; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header { background: white; padding: 15px; border-bottom: 4px solid var(--dark); display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container { display: grid; grid-template-columns: 300px 1fr; gap: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.summary-box { background: var(--dark); color: white; padding: 20px; border-radius: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card { background: white; padding: 15px; border-radius: 8px; text-align: center; border-top: 5px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card.green { border-top-color: var(--green); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card.amber { border-top-color: var(--amber); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card.red { border-top-color: var(--red); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>th { background: #eee; padding: 12px; text-align: left; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>td { padding: 12px; border-bottom: 1px solid #eee; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;&lt;div&gt;LIVE OPERATIONS UPDATE&lt;/div&gt;&lt;div id="time"&gt;Loading...&lt;/div&gt;&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="summary-box"&gt;&lt;h3&gt;EXECUTIVE SUMMARY&lt;/h3&gt;&lt;p id="sum"&gt;---&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-grid" id="kpis"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Area&lt;/th&gt;&lt;th&gt;vsFcst&lt;/th&gt;&lt;th&gt;ASA&lt;/th&gt;&lt;th&gt;Abnd%&lt;/th&gt;&lt;th&gt;AHT&lt;/th&gt;&lt;th&gt;Adh&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody id="rows"&gt;&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const URL = 'https://script.google.com/a/macros/ovo.com/s/AKfycbzee9eJGRu3xZ2wEv4yAUUnUglKcXnXlnCoSX5K1RE99_pz52dQ59jHQt7sEF3iFnhrhQ/exec';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function update() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const res = await fetch(URL);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const data = await res.json();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('sum').innerText = data.summary;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('kpis').innerHTML = data.metrics.map(m =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card ${m.rag}"&gt;&lt;div&gt;${m.area}&lt;/div&gt;&lt;div style="font-size:20px;font-weight:bold"&gt;${m.asa}&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('rows').innerHTML = data.metrics.map(m =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr&gt;&lt;td&gt;&lt;strong&gt;${m.area}&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;${m.vsFcst}&lt;/td&gt;&lt;td style="color:var(--${m.rag});font-weight:bold"&gt;${m.asa}&lt;/td&gt;&lt;td&gt;${m.abnd}&lt;/td&gt;&lt;td&gt;${m.aht}&lt;/td&gt;&lt;td&gt;${m.adh}&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('time').innerText = new Date().toLocaleTimeString();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>update(); setInterval(update, 60000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
